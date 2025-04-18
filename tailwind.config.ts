@@ -109,6 +109,14 @@ export default {
 						transform: 'scale(1.02)'
 					}
 				},
+				'pulse-slow': {
+					'0%, 100%': { 
+						opacity: '1' 
+					},
+					'50%': { 
+						opacity: '0.85' 
+					}
+				},
 				'scale-in': {
 					'0%': { transform: 'scale(0.9)', opacity: '0' },
 					'100%': { transform: 'scale(1)', opacity: '1' }
@@ -116,6 +124,11 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'moveLight': {
+					'0%': { transform: 'translateX(-100%) translateY(0%)' },
+					'50%': { transform: 'translateX(100%) translateY(10%)' },
+					'100%': { transform: 'translateX(-100%) translateY(0%)' }
 				}
 			},
 			animation: {
@@ -124,6 +137,7 @@ export default {
 				'fade-in': 'fade-in 0.7s ease-out forwards',
 				'counter-up': 'counter-up 0.5s ease-out forwards',
 				'pulse-glow': 'pulse-glow 2s infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'scale-in': 'scale-in 0.4s ease-out forwards',
 				'float': 'float 4s ease-in-out infinite'
 			},
@@ -131,6 +145,9 @@ export default {
 				'honeycomb': 'url("/honeycomb-bg.png")',
 				'amber-gradient': 'linear-gradient(135deg, #F4C542 0%, #DFAF2B 100%)',
 				'hero-pattern': 'url("/hero-pattern.svg")'
+			},
+			boxShadow: {
+				'glow': '0 0 15px 2px rgba(244, 197, 66, 0.5)'
 			}
 		}
 	},
