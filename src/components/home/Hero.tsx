@@ -45,6 +45,7 @@ const Hero = () => {
       >
         {/* Multiple Gradient Overlays for Depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-bumblebee-black/20 via-transparent to-bumblebee-black/30 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-bumblebee-yellow/10 to-transparent opacity-50"></div>
         <div className="absolute inset-0 honeycomb-bg opacity-10"></div>
       </div>
       
