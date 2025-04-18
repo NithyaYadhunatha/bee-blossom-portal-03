@@ -33,9 +33,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image/Gradient */}
+      {/* Background Image with Enhanced Gradient */}
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-bumblebee-black to-bumblebee-black/70 z-0"
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-bumblebee-black/70 to-bumblebee-black z-0"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop')`,
           backgroundSize: 'cover',
@@ -43,6 +43,8 @@ const Hero = () => {
           backgroundBlendMode: 'overlay',
         }}
       >
+        {/* Multiple Gradient Overlays for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-bumblebee-black/20 via-transparent to-bumblebee-black/30 opacity-80"></div>
         <div className="absolute inset-0 honeycomb-bg opacity-10"></div>
       </div>
       
