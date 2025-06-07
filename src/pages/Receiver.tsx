@@ -34,16 +34,17 @@ const Receiver = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-bumblebee-black/70 to-bumblebee-black z-0"
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80 z-0"
           style={{
-            backgroundImage: `url('/lovable-uploads/2c9b17d6-631a-4fed-8910-87c5bb018208.png')`,
+            backgroundImage: `url('/lovable-uploads/ef0ccd54-de60-44d8-a34d-fe999cc0cf1a.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundBlendMode: 'overlay',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-bumblebee-black/20 via-transparent to-bumblebee-black/30 opacity-80"></div>
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-bumblebee-yellow/10 to-transparent opacity-50"></div>
+          {/* Additional darker gradient overlays for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60"></div>
           <div className="absolute inset-0 honeycomb-bg opacity-10"></div>
         </div>
         
@@ -53,12 +54,12 @@ const Receiver = () => {
             headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight drop-shadow-lg">
             <span className="block">Request a</span>
             <span className="text-bumblebee-yellow block mt-2">Meal</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light drop-shadow-md">
             Everyone deserves access to nutritious food. Request assistance for yourself
             or someone in need through our simple process.
           </p>

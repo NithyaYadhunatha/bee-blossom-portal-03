@@ -35,7 +35,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Enhanced Gradient */}
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-bumblebee-black/70 to-bumblebee-black z-0"
+        className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80 z-0"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop')`,
           backgroundSize: 'cover',
@@ -43,9 +43,9 @@ const Hero = () => {
           backgroundBlendMode: 'overlay',
         }}
       >
-        {/* Multiple Gradient Overlays for Depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bumblebee-black/20 via-transparent to-bumblebee-black/30 opacity-80"></div>
-        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-bumblebee-yellow/10 to-transparent opacity-50"></div>
+        {/* Additional darker gradient overlays for better text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60"></div>
         <div className="absolute inset-0 honeycomb-bg opacity-10"></div>
       </div>
       
@@ -54,12 +54,12 @@ const Hero = () => {
         ref={heroRef}
         className="container mx-auto px-4 py-16 pt-32 z-10 text-center transition-all duration-700 transform opacity-0 translate-y-10"
       >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight drop-shadow-lg">
           <span className="block">Aahara</span>
           <span className="text-bumblebee-yellow block mt-2">Bridging Hunger and Hope</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light">
+        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light drop-shadow-md">
           A platform connecting food donors, volunteers, and those in need to create a sustainable ecosystem of food rescue and distribution.
         </p>
         

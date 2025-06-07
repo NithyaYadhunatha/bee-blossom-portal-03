@@ -12,10 +12,25 @@ const Login = () => {
   });
 
   return (
-    <div className="min-h-screen pt-24 pb-12 bg-gradient-to-b from-bumblebee-black to-bumblebee-black/90 flex items-center justify-center">
+    <div className="min-h-screen pt-24 pb-12 bg-gradient-to-b from-black/80 to-black/90 flex items-center justify-center relative overflow-hidden">
+      {/* Background image with enhanced gradient */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/85"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }}
+      >
+        {/* Additional darker gradient overlays for better visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
+      </div>
+      
       <div 
         ref={formRef}
-        className={`w-full max-w-md transition-all duration-700 ${
+        className={`w-full max-w-md relative z-10 transition-all duration-700 ${
           formInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >

@@ -121,7 +121,7 @@ const Volunteers = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-bumblebee-black/70 to-bumblebee-black z-0"
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80 z-0"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2073&auto=format&fit=crop')`,
             backgroundSize: 'cover',
@@ -129,8 +129,9 @@ const Volunteers = () => {
             backgroundBlendMode: 'overlay',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-bumblebee-black/20 via-transparent to-bumblebee-black/30 opacity-80"></div>
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-bumblebee-yellow/10 to-transparent opacity-50"></div>
+          {/* Additional darker gradient overlays for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60"></div>
           <div className="absolute inset-0 honeycomb-bg opacity-10"></div>
         </div>
         
@@ -140,12 +141,12 @@ const Volunteers = () => {
             headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight drop-shadow-lg">
             <span className="block">Join as a</span>
             <span className="text-bumblebee-yellow block mt-2">Volunteer</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light drop-shadow-md">
             Be the vital link in our food rescue chain. Volunteers are the heart of our operation,
             connecting donors with recipients and making real change happen.
           </p>
