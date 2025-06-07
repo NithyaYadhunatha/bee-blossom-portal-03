@@ -2,13 +2,20 @@
 import { useRef } from 'react';
 import { Phone, MapPin, Check, Info } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const Receiver = () => {
   const headerRef = useRef<HTMLDivElement>(null);
+  const optionsRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   
   const headerInView = useIntersectionObserver({
     ref: headerRef,
+    triggerOnce: true,
+  });
+
+  const optionsInView = useIntersectionObserver({
+    ref: optionsRef,
     triggerOnce: true,
   });
   
@@ -20,28 +27,58 @@ const Receiver = () => {
 
   return (
     <div className="pt-20">
-      {/* Header section */}
-      <div 
-        ref={headerRef}
-        className={`py-20 bg-bumblebee-black text-white text-center transition-all duration-700 ${
-          headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-            Request a <span className="text-bumblebee-yellow">Meal</span>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-bumblebee-black/70 to-bumblebee-black z-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1544484006-75c3d2b57b7a?q=80&w=2068&auto=format&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundBlendMode: 'overlay',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-bumblebee-black/20 via-transparent to-bumblebee-black/30 opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-bumblebee-yellow/10 to-transparent opacity-50"></div>
+          <div className="absolute inset-0 honeycomb-bg opacity-10"></div>
+        </div>
+        
+        <div 
+          ref={headerRef}
+          className={`container mx-auto px-4 py-16 pt-32 z-10 text-center transition-all duration-700 transform ${
+            headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+            <span className="block">Request a</span>
+            <span className="text-bumblebee-yellow block mt-2">Meal</span>
           </h1>
-          <p className="text-xl max-w-2xl mx-auto">
+          
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light">
             Everyone deserves access to nutritious food. Request assistance for yourself
             or someone in need through our simple process.
           </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="btn-primary animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Request Food
+            </button>
+            <Link to="/login" className="btn-outline animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              Receiver Login
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
       
       {/* Two options section */}
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-playfair font-bold text-center mb-12">
+          <h2 
+            ref={optionsRef}
+            className={`text-3xl font-playfair font-bold text-center mb-12 transition-all duration-700 ${
+              optionsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             How to Request Food
           </h2>
           

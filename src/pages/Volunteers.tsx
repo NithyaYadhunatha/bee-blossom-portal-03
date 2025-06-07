@@ -1,15 +1,16 @@
-
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Clock, Users, Award, CheckCircle, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import VolunteerApplicationForm from '@/components/forms/VolunteerApplicationForm';
 
 const Volunteers = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
   const rolesRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
+  const applicationRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   
   const headerInView = useIntersectionObserver({
@@ -29,6 +30,11 @@ const Volunteers = () => {
 
   const processInView = useIntersectionObserver({
     ref: processRef,
+    triggerOnce: true,
+  });
+
+  const applicationInView = useIntersectionObserver({
+    ref: applicationRef,
     triggerOnce: true,
   });
 
@@ -261,6 +267,33 @@ const Volunteers = () => {
                 <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Application Form Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div 
+            ref={applicationRef}
+            className={`text-center mb-16 transition-all duration-700 ${
+              applicationInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+              Apply to <span className="text-bumblebee-yellow">Volunteer</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to make a difference? Fill out our application form below
+            </p>
+          </div>
+
+          <div 
+            className={`max-w-4xl mx-auto transition-all duration-700 ${
+              applicationInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <VolunteerApplicationForm />
           </div>
         </div>
       </section>

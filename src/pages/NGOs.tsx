@@ -1,9 +1,9 @@
-
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Building2, Users, Network, TrendingUp, Shield, Globe, HandHeart, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import NGOApplicationForm from '@/components/forms/NGOApplicationForm';
 
 const NGOs = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -11,6 +11,7 @@ const NGOs = () => {
   const requirementsRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
+  const applicationRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   
   const headerInView = useIntersectionObserver({
@@ -35,6 +36,11 @@ const NGOs = () => {
 
   const processInView = useIntersectionObserver({
     ref: processRef,
+    triggerOnce: true,
+  });
+
+  const applicationInView = useIntersectionObserver({
+    ref: applicationRef,
     triggerOnce: true,
   });
 
@@ -327,6 +333,33 @@ const NGOs = () => {
                 <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Application Form Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div 
+            ref={applicationRef}
+            className={`text-center mb-16 transition-all duration-700 ${
+              applicationInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+              Partnership <span className="text-bumblebee-yellow">Application</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Join our network of partner organizations working to end hunger
+            </p>
+          </div>
+
+          <div 
+            className={`max-w-4xl mx-auto transition-all duration-700 ${
+              applicationInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <NGOApplicationForm />
           </div>
         </div>
       </section>
