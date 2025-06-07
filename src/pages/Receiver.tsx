@@ -36,7 +36,7 @@ const Receiver = () => {
         <div 
           className="absolute inset-0 bg-gradient-to-b from-transparent via-bumblebee-black/70 to-bumblebee-black z-0"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1544484006-75c3d2b57b7a?q=80&w=2068&auto=format&fit=crop')`,
+            backgroundImage: `url('/lovable-uploads/2c9b17d6-631a-4fed-8910-87c5bb018208.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundBlendMode: 'overlay',
@@ -79,11 +79,11 @@ const Receiver = () => {
       </section>
       
       {/* Two options section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-bumblebee-yellow">
         <div className="container mx-auto px-4">
           <h2 
             ref={optionsRef}
-            className={`text-3xl font-playfair font-bold text-center mb-12 transition-all duration-700 ${
+            className={`text-3xl font-playfair font-bold text-center mb-12 text-bumblebee-black transition-all duration-700 ${
               optionsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
@@ -92,11 +92,11 @@ const Receiver = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Option 1 */}
-            <div className="bg-bumblebee-cream/30 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
               <div className="w-16 h-16 bg-bumblebee-yellow/20 rounded-full flex items-center justify-center mb-6">
                 <Phone className="text-bumblebee-gold" size={24} />
               </div>
-              <h3 className="text-xl font-playfair font-bold mb-4">
+              <h3 className="text-xl font-playfair font-bold mb-4 text-bumblebee-black">
                 Call or SMS Our AI Assistant
               </h3>
               <p className="text-gray-600 mb-6">
@@ -116,7 +116,7 @@ const Receiver = () => {
                   <span>Available in multiple languages</span>
                 </li>
               </ul>
-              <div className="bg-bumblebee-black/10 rounded-lg p-4">
+              <div className="bg-bumblebee-yellow/20 rounded-lg p-4">
                 <div className="flex items-start gap-3">
                   <Info className="text-bumblebee-gold flex-shrink-0 mt-1" size={18} />
                   <p className="text-sm text-gray-600">
@@ -127,13 +127,13 @@ const Receiver = () => {
             </div>
             
             {/* Option 2 */}
-            <div className="bg-bumblebee-cream/30 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
               <div className="w-16 h-16 bg-bumblebee-yellow/20 rounded-full flex items-center justify-center mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-bumblebee-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-playfair font-bold mb-4">
+              <h3 className="text-xl font-playfair font-bold mb-4 text-bumblebee-black">
                 Fill Out the Form Below
               </h3>
               <p className="text-gray-600 mb-6">
@@ -153,7 +153,7 @@ const Receiver = () => {
                   <span>Specify number of people and food requirements</span>
                 </li>
               </ul>
-              <div className="bg-bumblebee-black/10 rounded-lg p-4">
+              <div className="bg-bumblebee-yellow/20 rounded-lg p-4">
                 <div className="flex items-start gap-3">
                   <Info className="text-bumblebee-gold flex-shrink-0 mt-1" size={18} />
                   <p className="text-sm text-gray-600">
@@ -167,10 +167,10 @@ const Receiver = () => {
       </div>
       
       {/* Form section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-bumblebee-yellow">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-playfair font-bold text-center mb-8">
+            <h2 className="text-3xl font-playfair font-bold text-center mb-8 text-bumblebee-black">
               Request Form
             </h2>
             
