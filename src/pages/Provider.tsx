@@ -28,9 +28,12 @@ const Provider = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit the form data
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 3000);
+  };
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -68,7 +71,11 @@ const Provider = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <button 
+              onClick={scrollToForm}
+              className="btn-primary animate-fade-in" 
+              style={{ animationDelay: '0.2s' }}
+            >
               Register Donation
             </button>
             <Link to="/login" className="btn-outline animate-fade-in" style={{ animationDelay: '0.3s' }}>

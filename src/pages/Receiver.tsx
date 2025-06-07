@@ -25,6 +25,10 @@ const Receiver = () => {
     threshold: 0.3,
   });
 
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -60,7 +64,11 @@ const Receiver = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <button 
+              onClick={scrollToForm}
+              className="btn-primary animate-fade-in" 
+              style={{ animationDelay: '0.2s' }}
+            >
               Request Food
             </button>
             <Link to="/login" className="btn-outline animate-fade-in" style={{ animationDelay: '0.3s' }}>

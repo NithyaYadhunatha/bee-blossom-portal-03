@@ -46,8 +46,11 @@ const NGOs = () => {
 
   const ctaInView = useIntersectionObserver({
     ref: ctaRef,
-    triggerOnce: true,
   });
+
+  const scrollToApplication = () => {
+    applicationRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const benefits = [
     {
@@ -180,7 +183,11 @@ const NGOs = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <button 
+              onClick={scrollToApplication}
+              className="btn-primary animate-fade-in" 
+              style={{ animationDelay: '0.2s' }}
+            >
               Apply for Partnership
             </button>
             <Link to="/login" className="btn-outline animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -381,7 +388,10 @@ const NGOs = () => {
               Together, we can achieve more than any organization can alone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
+              <button 
+                onClick={scrollToApplication}
+                className="btn-primary"
+              >
                 Submit Partnership Application
               </button>
               <Link to="/login" className="btn-outline border-white text-white hover:bg-white hover:text-bumblebee-black">
